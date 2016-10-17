@@ -1,0 +1,826 @@
+<!-- ======= =EES START ======== //-->
+
+<!-- ======= =EES END ======= //-->
+
+<!doctype html>
+<!--
+  Charles Sturt University Migration Styles v1.0
+-->
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+
+  <!-- Dublin Core //-->
+
+  <!-- Describing the page and content //-->
+  <meta name="keywords" content="Charles Sturt University, Charles, Sturt, University, CSU, Distance, education, online, learning, study, abroad, research, Australia, NSW, Bathurst, Albury, Wodonga, Dubbo, Orange, Wagga, Canberra, Sydney, Thurgoona" />
+  <meta name="dc.title" content="Home" />
+  <meta name="dc.description" content="A national multi-campus university offering excellence in education for the professions, strategic and applied research, and flexible delivery of learning and teaching." />
+  <meta name="dc.identifier" scheme="dcterms.URI" content="http://staff-links.csu.edu.au/home" />
+  <meta name="dc.subject" content="Charles Sturt University" />
+  <meta name="dc.format" scheme="dcterms.IMT" content="text/html" />
+  <meta name="dc.language" scheme="dcterms.RFC3066" content="en-AU" />
+  <meta name="classification" content="education" />
+  <meta name="contentstatus" content="official" />
+  <meta name="area" content="Education" />
+  <meta name="description" content="A national multi-campus university offering excellence in education for the professions, strategic and applied research, and flexible delivery of learning and teaching." />
+
+  <!-- Describing who made it, who has the rights //-->
+  <meta name="dc.creator.corporatename" content="Charles Sturt University (CSU) Web Team" />
+  <meta name="dc.creator" content="Tulloh, Bobbie" />
+  <meta name="copyright" content="Charles Sturt University" />
+  <meta name="dc.rights" scheme="dcterms.URI" content="http://www.csu.edu.au/copyright/" />
+  <meta name="dc.rightsHolder" content="Charles Sturt University" />
+
+  <!-- Geolocation information //-->
+  <meta name="ICBM" content="-33.43238;149.56342" />
+  <meta name="geo.position" content="-33.43238;149.56342" />
+
+  <!-- When was the page last updated //-->
+  <meta name="dcterms.modified" scheme="dcterms.W3CDTF" content="2016-08-25T11:27:43+11:00" />
+  <title>Staff - Links</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=11, IE=EDGE" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="http://accommodation.csu.edu.au/__data/assets/css_file/0010/2424349/material.min.css">
+  <!-- material.min.css -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="http://accommodation.csu.edu.au/designs/design-files/css/csu-styles.css">
+  <!-- csu-styles.css -->
+  <link rel="stylesheet" href="http://accommodation.csu.edu.au/__data/assets/css_file/0004/2434423/unslider-dots.css">
+  <!-- unslider.css -->
+  <link rel="stylesheet" href="http://accommodation.csu.edu.au/__data/assets/css_file/0009/2434464/unslider.css">
+  <!-- unslider-dots.css -->
+  <script src="http://accommodation.csu.edu.au/__data/assets/js_file/0010/2434465/unslider-min.js"></script><!-- unslider-min.js -->
+
+  <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
+  <link rel="stylesheet" href="http://accommodation.csu.edu.au/__data/assets/css_file/0007/2434408/jquery-ui.min.css">
+  <!-- jquery-ui.min.css -->
+  <script src="http://accommodation.csu.edu.au/__data/assets/js_file/0008/2434409/jquery-ui.min.js"></script><!-- jquery-ui.min.js -->
+
+  <!-- expandible javascript -->
+  <script>
+    $(function(){
+      $('.mdl-collapse__content').each(function(){
+        var content = $(this);
+        content.css('margin-top', -content.height());
+      })
+
+      $(document.body).on('click', '.mdl-collapse__button', function(){
+        $(this).parent('.mdl-collapse').toggleClass('mdl-collapse--opened');
+      })
+    })
+    function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,    
+    function(m,key,value) {
+      vars[key] = value;
+    });
+    return vars;
+  }
+
+function createDataTabs(data,tbNumber)
+  {
+    if(data.number > 1)
+        {
+          divData="<div id=\"tabs"+tbNumber+"\" style='width:103%'><ul><li><a href=\"#tabs-"+tbNumber+"1\">Package 1</a></li><li><a href=\"#tabs-"+tbNumber+"2\">Package 2</a></li></ul><div id=\"tabs-"+tbNumber+"1\" style='padding-left: 0px;'></div><div id=\"tabs-"+tbNumber+"2\" style='padding-left: 0px;'></div></div>";
+            $("#tabs-"+tbNumber).html(divData);
+            $( "#tabs"+tbNumber ).tabs();
+
+          tablePre="<table  class=\"mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp\"><thead><tr>";
+          for(i=0;i<packages.length;i++)
+          {
+            tablePre=tablePre+"<th style='display:table-cell'>"+packages[i]+"</th>";
+          }
+          table=tablePre+"</tr></tbody><tbody>";
+          for(i=0;i<data.packages["1"].length;i++)
+          {
+            
+            tmpData=data.packages["1"][i];
+            table=table+"<tr><td  style='display:table-cell'>"+tmpData.type+"</td>";
+             for(j=1;j<packages.length;j++)
+              {
+                table=table+"<td  style='display:table-cell'>"+tmpData[j-1]+"</td>";
+              }
+            table=table+"</tr>";
+          }
+          $("#tabs-"+tbNumber+"1").html(table+"<tbody></table>");
+         table=tablePre+"</tr></tbody><tbody>";
+          for(i=0;i<data.packages["2"].length;i++)
+          {
+            
+            tmpData=data.packages["2"][i];
+            table=table+"<tr><td    style='display:table-cell'>"+tmpData.type+"</td>";
+             for(j=1;j<packages.length;j++)
+              {
+                table=table+"<td  style='display:table-cell'>"+tmpData[j-1]+"</td>";
+              }
+            table=table+"</tr>";
+          }
+          $("#tabs-"+tbNumber+"2").html(table+"<tbody></table>");
+          return 1;
+        }
+        table="<table  class=\"mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp\"><thead><tr>";
+        for(i=0;i<packages.length;i++)
+        {
+          table=table+"<th    style='display:table-cell'>"+packages[i]+"</th>";
+        }
+        table=table+"</tr></tbody><tbody>";
+        for(i=0;i<data.packages["1"].length;i++)
+        {
+          tmpData=data.packages["1"][i];
+          table=table+"<tr><td   style='display:table-cell'>"+tmpData.type+"</td>";
+           for(j=1;j<packages.length;j++)
+              {
+                table=table+"<td   style='display:table-cell'>"+tmpData[j-1]+"</td>";
+              }
+          table=table+"</tr>";
+        }
+        $("#tabs-"+tbNumber).html(table+"<tbody></table>");
+  }
+$( document ).ready(function() {
+   
+  
+   
+});
+$(window).on('load',function() {
+if(typeof(getData["room"]) == "string")
+{
+  $( "#dialog" ).dialog("close");
+  $("body").css("overflow", "auto");
+}
+});
+  </script>
+  <link rel="shortcut icon" type="image/x-icon" href="">
+  <link rel="apple-touch-icon" href="">
+
+  <!--
+  Running Squiz Matrix
+  Developed by Squiz - http://www.squiz.net
+  Squiz, Squiz Matrix, MySource, MySource Matrix and Squiz.net are registered Trademarks of Squiz Pty Ltd
+  Page generated: 17 October 2016 08:29:56
+-->
+
+  </head>
+  <body>
+<!-- Body scripts can go here, nested helper #568295 --> 
+<script>
+  dataLayer = [];
+</script><!-- Google Tag Manager -->
+<noscript>
+  <iframe src="//www.googletagmanager.com/ns.html?id=GTM-TR9R3J" style="display:none;visibility:hidden;height:0;width:0"></iframe>
+  </noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TR9R3J');</script> 
+<!-- End Google Tag Manager --> 
+
+<script type="text/javascript">
+      var getData=getUrlVars();
+    </script>
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header ">
+
+<!-- top horizontal navigation -->
+<div class="csu-header mdl-layout__header mdl-layout__header--waterfall">
+    <div class="global-nav mdl-layout__header-row">
+    <div class="global-nav-wrapper"> <a class="mdl-navigation__link" href="http://futurestudents.csu.edu.au/" title="Home - Future Students - CSU">Future Students</a> <a class="mdl-navigation__link" href="http://www.csu.edu.au/staff-links" title="Staff - Charles Sturt University">Staff</a> <a class="mdl-navigation__link" href="http://alumni.csu.edu.au/" title="My Alumni - Charles Sturt University">Alumni</a> <a class="mdl-navigation__link" href="http://www.csu.edu.au/library/" title="Home - Library - CSU">Library</a> <a class="mdl-navigation__link" href="http://www.csu.edu.au/about/organisational-structure/faculties-and-schools" title="Faculties and Schools - Charles Sturt University">Faculties &amp; Schools</a> <a class="mdl-navigation__link" href="http://www.csu.edu.au/jobs/" title="Home - Jobs at CSU">Jobs</a> <a class="mdl-navigation__link" href="http://www.csu.edu.au/news/" title="Latest News - CSU News">News</a> <a class="mdl-navigation__link" href="http://www.csu.edu.au/about" title="About CSU - Charles Sturt University">About</a> <a class="mdl-navigation__link" href="http://www.csu.edu.au/contacts" title="Contact us - Charles Sturt University">Contacts</a> <a class="mdl-navigation__link" href="http://student.csu.edu.au/" title="Home - Student Portal - Charles Sturt University">Student Portal</a> </div>
+  </div>
+    <div class="mdl-layout__header-row"> <span class="csu-title mdl-layout-title"> <a href="http://www.csu.edu.au" title="Home - Charles Sturt University"><img class="csu-logo-image csu-site-title-image" src="http://accommodation.csu.edu.au/__data/assets/image/0019/2430604/image001.png" alt="Charles Sturt University"></a> <a href="http://accommodation.csu.edu.au" class="csu-site-title" title="Accommodation - Charles Sturt University">Staff-link</a> </span> 
+    <!-- Add spacer, to align navigation to the right in desktop -->
+    <div class="csu-header-spacer mdl-layout-spacer"></div>
+    <div class="csu-search-box mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right mdl-textfield--full-width">
+        <form action="http://staff-links.csu.edu.au/search" method="GET" title="Site Search Form">
+        <input type="hidden" />
+        <label class="mdl-button mdl-js-button mdl-button--icon" for="search-field"> <i class="material-icons">search</i> </label>
+        <div class="mdl-textfield__expandable-holder">
+            <input class="mdl-textfield__input" type="text" name="q" id="search-field">
+          </div>
+      </form>
+      </div>
+    
+    <!-- top navigation -->
+    <div class="csu-navigation-container">
+        <nav class="csu-navigation mdl-navigation"> <a class="mdl-navigation__link" href="/home" title="Go to Home">Home</a> <a class="mdl-navigation__link" href="/our-rooms" title="Go to Rooms">Rooms</a> <a class="mdl-navigation__link" href="/meals-catering" title="Go to Meals">Meals</a> <a class="mdl-navigation__link" href="/fees-and-costs" title="Go to Fees">Fees</a> <a class="mdl-navigation__link" href="/how-to-apply" title="Go to Apply">Apply</a> <a class="mdl-navigation__link" href="/off-campus" title="Go to Off Campus">Off Campus</a> <a class="mdl-navigation__link" href="/policies-and-guidelines" title="Go to Policies">Policies</a> <a class="mdl-navigation__link" href="/contacts" title="Go to Contacts">Contacts</a> </nav>
+      </div>
+    
+    <!-- top navigation mobile layout --> 
+    <span class="csu-mobile-title mdl-layout-title"> <a href="//www.csu.edu.au/" title="Home - Charles Sturt University"><img class="csu-logo-image csu-site-title-image" src="http://accommodation.csu.edu.au/__data/assets/image/0019/2430604/image001.png" alt="Charles Sturt University"></a> <a href="http://accommodation.csu.edu.au" class="csu-site-title" title="Accommodation - Charles Sturt University">Accommodation</a> </span> 
+    <!-- <button class="csu-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="more-button">
+            <i class="material-icons">more_vert</i>
+          </button>
+          <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="more-button">
+            <li class="mdl-menu__item">Menu 1</li>
+            <li class="mdl-menu__item">Menu 2</li>
+            <li disabled class="mdl-menu__item">Menu 3</li>
+            <li class="mdl-menu__item">Menu 4</li>
+          </ul> --> 
+  </div>
+  </div>
+
+<!--  ======= =LEFT HAND MENU ======= //--> 
+
+<!-- show from left navigation slide out drawer -->
+<div class="csu-drawer mdl-layout__drawer"> <span class="mdl-layout-title"><a href="//www.csu.edu.au/" title="Home - Charles Sturt University"><img class="csu-logo-image" src="http://accommodation.csu.edu.au/__data/assets/image/0019/2430604/image001.png" alt="Charles Sturt University"></a></span>
+    <nav class="mdl-navigation"> 
+    
+    <!--      <div id="lh_nag" class="hidden"> -->
+    
+    <div id="lh_nag" class="">
+    <!--<span class="mdl-mobile-title mdl-layout-title hidden"><img class="csu-logo-image" src="http://accommodation.csu.edu.au/__data/assets/image/0019/2430604/image001.png" alt="Charles Sturt University"></span>
+            <nav class="mdl-navigation">--> 
+    <a class="mdl-navigation__link w--current" href="http://accommodation.csu.edu.au/home" title="Go to Home.">Home</a> <a class="mdl-navigation__link w--top" href="http://accommodation.csu.edu.au/our-rooms" title="Go to Our Rooms.">Our Rooms</a>
+    <div class="mdl-collapse mdl-collapse--opened">
+        <div class="mdl-collapse__content-wrapper ">
+        <div class="mdl-collapse__content mdl-animation--default"> <a class="mdl-navigation__link second-level 1" href="http://accommodation.csu.edu.au/our-rooms/features-and-benefits"  title="Go to Features and benefits.">Features and benefits</a> <a class="mdl-navigation__link second-level 1" href="http://accommodation.csu.edu.au/our-rooms/albury-wodonga"  title="Go to Albury-Wodonga.">Albury-Wodonga</a> <a class="mdl-navigation__link second-level 1" href="http://accommodation.csu.edu.au/our-rooms/bathurst"  title="Go to Bathurst.">Bathurst</a> <a class="mdl-navigation__link second-level 1" href="http://accommodation.csu.edu.au/our-rooms/dubbo"  title="Go to Dubbo Cottages.">Dubbo Cottages</a> <a class="mdl-navigation__link second-level 1" href="http://accommodation.csu.edu.au/our-rooms/orange"  title="Go to Orange.">Orange</a> <a class="mdl-navigation__link second-level 1" href="http://accommodation.csu.edu.au/our-rooms/wagga-wagga"  title="Go to Wagga Wagga.">Wagga Wagga</a> <a class="mdl-navigation__link second-level 1" href="http://accommodation.csu.edu.au/our-rooms/first-year-student"  title="Go to First year student.">First year student</a> </div>
+      </div>
+      </div>
+    <a class="mdl-navigation__link w--top" href="http://accommodation.csu.edu.au/meals-catering" title="Go to Meals and catering.">Meals and catering</a> <a class="mdl-navigation__link w--top" href="http://accommodation.csu.edu.au/fees-and-costs" title="Go to Fees and payments.">Fees and payments</a>
+    <div class="mdl-collapse mdl-collapse--opened">
+        <div class="mdl-collapse__content-wrapper ">
+        <div class="mdl-collapse__content mdl-animation--default"> <a class="mdl-navigation__link second-level 1" href="http://accommodation.csu.edu.au/fees-and-costs/help"  title="Go to Help with costs.">Help with costs</a> <a class="mdl-navigation__link second-level 1" href="http://accommodation.csu.edu.au/fees-and-costs/accommodation-fees"  title="Go to Accommodation fees.">Accommodation fees</a> </div>
+      </div>
+      </div>
+    <a class="mdl-navigation__link w--top" href="http://accommodation.csu.edu.au/how-to-apply" title="Go to How to apply.">How to apply</a>
+    <div class="mdl-collapse mdl-collapse--opened">
+        <div class="mdl-collapse__content-wrapper ">
+        <div class="mdl-collapse__content mdl-animation--default"> <a class="mdl-navigation__link second-level 1" href="http://accommodation.csu.edu.au/how-to-apply/residential"  title="Go to Residential Schools (Online students).">Residential Schools (Online students)</a> <a class="mdl-navigation__link second-level 1" href="http://accommodation.csu.edu.au/how-to-apply/temporary"  title="Go to Temporary accommodation.">Temporary accommodation</a> </div>
+      </div>
+      </div>
+    <a class="mdl-navigation__link w--top" href="http://accommodation.csu.edu.au/off-campus" title="Go to Off Campus.">Off Campus</a>
+    <div class="mdl-collapse mdl-collapse--opened">
+        <div class="mdl-collapse__content-wrapper ">
+        <div class="mdl-collapse__content mdl-animation--default"> <a class="mdl-navigation__link second-level 1" href="http://accommodation.csu.edu.au/off-campus/accommodation-styles"  title="Go to Off campus accommodation styles.">Off campus accommodation styles</a> <a class="mdl-navigation__link second-level 1" href="http://accommodation.csu.edu.au/off-campus/accommodation-costs"  title="Go to Accommodation costs.">Accommodation costs</a> <a class="mdl-navigation__link second-level 1" href="http://accommodation.csu.edu.au/off-campus/checklist"  title="Go to Living off campus checklist.">Living off campus checklist</a> <a class="mdl-navigation__link second-level 1" href="http://accommodation.csu.edu.au/off-campus/moving-out-of-rental-accommodation"  title="Go to Moving out of rental accommodation.">Moving out of rental accommodation</a> </div>
+      </div>
+      </div>
+    <a class="mdl-navigation__link w--top" href="http://accommodation.csu.edu.au/policies-and-guidelines" title="Go to Policies.">Policies</a> <a class="mdl-navigation__link w--top" href="http://accommodation.csu.edu.au/contacts" title="Go to Contacts.">Contacts</a> 
+    
+    <!--          </div>--> 
+    
+    <!--      </div>--> 
+    <!--  ======= =LEFT HAND MENU END ======= //--> 
+    
+    <!--
+          
+                        <a class="mdl-navigation__link" href="/home" title="Go to Home">Home</a>
+                          <a class="mdl-navigation__link" href="/our-rooms" title="Go to Rooms">Rooms</a>
+                          <a class="mdl-navigation__link" href="/meals-catering" title="Go to Meals">Meals</a>
+                          <a class="mdl-navigation__link" href="/fees-and-costs" title="Go to Fees">Fees</a>
+                          <a class="mdl-navigation__link" href="/how-to-apply" title="Go to Apply">Apply</a>
+                          <a class="mdl-navigation__link" href="/off-campus" title="Go to Off Campus">Off Campus</a>
+                          <a class="mdl-navigation__link" href="/policies-and-guidelines" title="Go to Policies">Policies</a>
+                          <a class="mdl-navigation__link" href="/contacts" title="Go to Contacts">Contacts</a>
+            		
+-->
+    <div class="global-nav-leftnav">
+        <div class="global-nav-wrapper"> <a class="mdl-navigation__link" href="http://futurestudents.csu.edu.au/" title="Home - Future Students - CSU">Future Students</a> <a class="mdl-navigation__link" href="http://www.csu.edu.au/staff-links" title="Staff - Charles Sturt University">Staff</a> <a class="mdl-navigation__link" href="http://alumni.csu.edu.au/" title="My Alumni - Charles Sturt University">Alumni</a> <a class="mdl-navigation__link" href="http://www.csu.edu.au/library/" title="Home - Library - CSU">Library</a> <a class="mdl-navigation__link" href="http://www.csu.edu.au/about/organisational-structure/faculties-and-schools" title="Faculties and Schools - Charles Sturt University">Faculties &amp; Schools</a> <a class="mdl-navigation__link" href="http://www.csu.edu.au/jobs/" title="Home - Jobs at CSU">Jobs</a> <a class="mdl-navigation__link" href="http://www.csu.edu.au/news/" title="Latest News - CSU News">News</a> <a class="mdl-navigation__link" href="http://www.csu.edu.au/about" title="About CSU - Charles Sturt University">About</a> <a class="mdl-navigation__link" href="http://www.csu.edu.au/contacts" title="Contact us - Charles Sturt University">Contacts</a> <a class="mdl-navigation__link" href="http://student.csu.edu.au/" title="Home - Student Portal - Charles Sturt University">Student Portal</a> </div>
+      </div>
+  </nav>
+  </div>
+<!--slide from left drawer navigation--> 
+
+<!-- ======= =BREADCRUMBS ======= //-->
+
+<div id="breadcrumb">
+    <div class="csu-main-container">
+    <ul class="crumbs" >
+        <li> <a href="http://accommodation.csu.edu.au"> Accommodation </a> </li>
+        <li> <a href="http://accommodation.csu.edu.au/home" class="active"> Home </a> </li>
+      </ul>
+  </div>
+  </div>
+
+<!-- ======= =BREADCRUMBS END ======= //--> 
+
+<!-- CONTENT -->
+
+<style type="text/css">
+#breadcrumb {display:none;}
+</style>
+
+<!-- infotainment section: hero image -->
+<div class="csu-content mdl-layout__content">
+<a name="top"></a>
+<div class="csu-infotainment-section  mdl-grid mdl-typography--text-left">
+    <div class="csu-banner-text-section mdl-cell mdl-cell--11-col">
+    <div class="logo-font csu-slogan">Staff at CSU</div>
+    <div class="divider-hero"></div>
+    <div class="logo-font csu-sub-slogan">Usefull links for current staff at CSU.</div>
+    <div class="hero-button-div"><a class="button hero-button" href="http://csu.edu.au/staff-links">Find a Staff Member</a></div>
+  </div>
+  </div>
+<!-- band of icons section -->
+<div class="csu-customize-section ">
+    <div class="mdl-grid csu-main-container icon-section"> </div>
+    <!-- end band of icons section --> <!-- room cards -->
+    <div class="csu-card-section">
+    <div class="csu-more-section">
+        <div class="csu-section-title mdl-typography--display-1-color-contrast">Staff resources</div>
+        
+        <!-- first row grid --> <!-- default sets of rooms section -->
+        <div class="csu-card-container mdl-grid">
+        <div class="mdl-cell mdl-cell--4-col mdl-card mdl-shadow--4dp">
+            <div class="mdl-card__media"> <img src="http://accommodation.csu.edu.au/__data/assets/image/0006/2433246/gallery_bathurst_diggings_03.jpg"> </div>
+            <div class="mdl-card__title">
+            <ul>
+                <h4 class="mdl-card__title-text">Dates and University Policy</h4>
+                <li><a href="http://www.csu.edu.au/about/important-dates">Principal Dates</a></li>
+                <li><a href="https://cms.csu.edu.au/about/policy">CSU Policy Library</a></li>
+                <li><a href="http://www.csu.edu.au/division/student-admin/staff-services/general/DSA-Staff-Calendar-1.xlsx" class="excel" target="_blank">Administration Calendar[XLS]</a></li>
+              </ul>
+          </div>
+            <div class="mdl-card__supporting-text">
+            <ul>
+                <h4 class="mdl-card__title-text">Finance</h4>
+                <li><a href="http://finance.csu.edu.au/services" target="_blank" title="All Staff Finance services such as Banner, FAST, ProMaster">Finance Services</a></li>
+                <li><a href="http://finance.csu.edu.au/systems" target="_blank" title="All Staff Finance services such as Banner, FAST, ProMaster">(Banner, FAST, ProMaster...)</a></li>
+              </ul>
+          </div>
+            <div class="mdl-card__actions"> </div>
+          </div>
+        <div class="mdl-cell mdl-cell--4-col mdl-card mdl-shadow--3dp">
+            <div class="mdl-card__media"> <img src="http://accommodation.csu.edu.au/__data/assets/image/0009/2433537/gallery_wagga_hampdensPG_01.jpg"> </div>
+            <div class="mdl-card__title">
+            <ul>
+                <h4 class="mdl-card__title-text">Web Based Email&nbsp</h4>
+                <li><a href="http://weboutlook.csu.edu.au/exchange/">Outlook Web Access</a></li>
+              </ul>
+          </div>
+            <div class="mdl-card__supporting-text">
+            <ul>
+                <h4 class="mdl-card__title-text">Staff information and News</h4>
+                
+                <!--<li><a href="http://www.csu.edu.au/special/rivstclb/">Staff Club - Wagga Wagga</a></li>-->
+                <li><a href="http://staff.csu.edu.au/perl/portal.pl?task=main_page&amp;content_task=whatsnew_max">What's New</a></li>
+                <li><a href="http://staff.csu.edu.au" target="_blank">Staff.CSU</a></li>
+                <li><a href="https://www.csu.edu.au/unistats/products/csu-at-a-glance">University Statistics Portal</a></li>
+                <li><a href="https://www.csu.edu.au/division/student-admin/staff-services/overview">Student Administration - Staff Services</a></li>
+              </ul>
+          </div>
+            <div class="mdl-card__actions"> </div>
+          </div>
+        <div class="mdl-cell mdl-cell--4-col mdl-card mdl-shadow--3dp">
+            <div class="mdl-card__media"> <img src="http://accommodation.csu.edu.au/__data/assets/image/0010/2433466/gallery_orange_springcreek_03.jpg"> </div>
+            <div class="mdl-card__title">
+            <ul>
+                <h4 class="mdl-card__title-text">IT Services or Information</h4>
+                <li><a href="http://csu.edu.au/division/dit/services/service-catalogue/for-staff/">IT Staff Services</a>&nbsp;</li>
+                <li><a href="http://www.csu.edu.au/division/dit/services/">IT Service Desk</a></li>
+                <li><a href="http://www.csu.edu.au/division/dit/initiatives/ISIP.pdf" target="_blank">Initiatives &amp; Strategy Implementation Plan (ISIP) [PDF]</a></li>
+              </ul>
+          </div>
+            <div class="mdl-card__supporting-text">
+            <ul>
+                <h4 class="mdl-card__title-text">Facilities</h4>
+                <li><a href="http://www.csu.edu.au/division/facilitiesm/maintenance">Service Requests (BEIMS)</a></li>
+                <li><a href="http://www.csu.edu.au/division/facilitiesm/security">Security</a></li>
+                <li><a href="http://www.csu.edu.au/csugreen">CSU Green</a></li>
+              </ul>
+          </div>
+            <div class="mdl-card__actions"> </div>
+          </div>
+        
+        <!-- next row grid --> <!-- default sets of rooms section -->
+        <div class="mdl-cell mdl-cell--4-col mdl-card mdl-shadow--3dp">
+            <div class="mdl-card__media"> <img src="http://accommodation.csu.edu.au/__data/assets/image/0017/2433221/gallery_albury_rothwell_01.jpg"> </div>
+            <div class="mdl-card__title">
+            <ul>
+                <h4 class="mdl-card__title-text">HR Services</h4>
+                <li><a href="http://www.csu.edu.au/division/hr/health-safety-wellbeing/ohs-home">Health, Safety and Wellbeing</a></li>
+                <li><a href="http://www.csu.edu.au/division/hr/health-safety-wellbeing/accidents-incidents">Accident/Incident Reporting</a></li>
+                <li><a href="http://www.csu.edu.au/division/hr/health-safety-wellbeing/hazards">Hazard Reporting</a></li>
+                <li><a href="http://www.csu.edu.au/division/humres/services/">Salary, Leave &amp; Work Conditions</a></li>
+                <li><a href="http://www.csu.edu.au/division/hr/learning-and-development">Professional Learning and Development</a></li>
+                <li><a href="https://webkiosk.csu.edu.au/">Web Self Service Kiosk</a></li>
+                <li><a href="http://www.csu.edu.au/division/hr/about-hr/hr-contacts">HR Contacts</a></li>
+                <li><a href="http://www.csu.edu.au/managing-at-csu/home" title="A Toolkit for Managers and Supervisors">Managing @ CSU</a></li>
+                <li><a href="http://www.csu.edu.au/division/hr/equity-diversity-and-support/equity-diversity">Equity and Diversity</a></li>
+                <li><a href="http://www.csu.edu.au/division/hr/equity-diversity-and-support/racism-it-stops-with-me">Racism It Stops With Me</a></li>
+              </ul>
+          </div>
+            <div class="mdl-card__supporting-text"> <span class="mdl-typography--font-light mdl-typography--subhead">.</span><br>
+            <span class="mdl-typography--font-light mdl-typography--subhead"></span> </div>
+            <div class="mdl-card__actions"> </div>
+          </div>
+        <div class="mdl-cell mdl-cell--4-col mdl-card mdl-shadow--3dp">
+            <div class="mdl-card__media"> <img src="http://accommodation.csu.edu.au/__data/assets/image/0020/2433305/gallery_dubbo_01.jpg"> </div>
+            <div class="mdl-card__title">
+            <ul>
+                <h4 class="mdl-card__title-text">Learning and Teaching</h4>
+                <li><a href="http://www.csu.edu.au/division/student-learning">Learning and Teaching at CSU</a></li>
+                <li><a href="http://www.csu.edu.au/division/student-learning/interact2_help">CSU Interact2 Information Website</a></li>
+                <li><a href="http://www.csu.edu.au/staff-links/docs/Course-Contact-List.xls">Course Contact List [XLS]</a></li>
+                <li><a href="http://http://www.csu.edu.au/csu-card">CSU Card</a></li>
+              </ul>
+          </div>
+            <div class="mdl-card__supporting-text"> 
+            <ul>
+            <h4 class="mdl-card__title-text">CSU Staff Benefits</h4>
+            <li><a href="http://www.csu.edu.au/jobs/working-with-us/benefits-and-rewards">Benefits &amp; Rewards</a></li>
+        <li><a href="http://www.csu.edu.au/division/hr/career-devel/career-devel-home">Professional Development</a></li>
+        <li><a href="http://www.csu.edu.au/jobs/working-with-us/regional-living">Regional Living</a></li>
+      </ul>
+             </div>
+            <div class="mdl-card__actions"> 
+            </div>
+          </div>
+        <div class="mdl-cell mdl-cell--4-col mdl-card mdl-shadow--3dp">
+            <div class="mdl-card__media"> <img src="img src="images/benefits.jpg"> 
+            </div>
+          </div>
+      </div>
+        <div class="mdl-cell mdl-cell--4-col mdl-card mdl-shadow--3dp">
+        <div class="mdl-card__media"> <img src="http://accommodation.csu.edu.au/__data/assets/image/0017/2433221/gallery_albury_rothwell_01.jpg"> </div>
+      </div>
+      </div>
+   
+<div id="content_div_2001806">
+<!-- another section -->
+<div class="csu-mini-promo-section">
+    <div class="csu-mini-promo-band mdl-grid">
+    <div class="csu-main-container csu-mini-promo-band-text mdl-cell mdl-cell--12-col">
+        <div class="mdl-typography--display-2 "> <img src="http://accommodation.csu.edu.au/__data/assets/image/0003/2446365/reslife_wordmark.png" alt="ResidenceLife" style="margin-bottom:15px;"> </div>
+        <div class="mdl-grid">
+        <div class="mdl-cell--6-col">
+            <p class="mdl-typography--font-light mdl-typography--subhead"> See what is happening on campus right now. </p>
+            <p> <a class="mdl-typography--font-regular mdl-typography--text-capitalize csu-alt-link" href="https://www.facebook.com/ResLifeCSU/"> Visit our facebook page<i class="material-icons">chevron_right</i> </a> </p>
+          </div>
+        <div class="mdl-cell--6-col">
+            <p class="mdl-typography--font-light mdl-typography--subhead"> See the campus for yourself. </p>
+            <p> <a class="mdl-typography--font-regular mdl-typography--text-capitalize csu-alt-link" href="https://futurestudents.csu.edu.au/unilife/campuses/campus-tours/book-a-tour"> Book a campus tour<i class="material-icons">chevron_right</i> </a> </p>
+          </div>
+      </div>
+      </div>
+  </div>
+  </div>
+
+<!-- FOOTER -->
+
+<div id="content_div_2430631"> 
+    <!-- social media section -->
+    <div class="social-media-section social-media-container mdl-grid">
+    <div class="mdl-layout-spacer"></div>
+    <div class="mdl-cell mdl-cell--4-col"> 
+        <!-- twitter -->
+        <div class="social-media-icon mdl-cell mdl-cell--2-col"> <a href="https://twitter.com/charlessturtuni" title="CSU Twitter"><img src="http://accommodation.csu.edu.au/__data/assets/image/0003/2431767/social-icon-twitter.png" alt="CSU Twitter"></a> </div>
+        <!-- facebook -->
+        <div class="social-media-icon mdl-cell mdl-cell--2-col"> <a href="https://facebook.com/charlessturtuni" title="CSU Facebook"><img src="http://accommodation.csu.edu.au/__data/assets/image/0009/2431764/social-icon-facebook.png" alt="CSU Facebook"></a> </div>
+        <!-- linkedin -->
+        <div class="social-media-icon mdl-cell mdl-cell--2-col"> <a href="https://www.linkedin.com/edu/school?id=10222" title="CSU LinkedIn"><img src="http://accommodation.csu.edu.au/__data/assets/image/0011/2431766/social-icon-linkedin.png" alt="CSU LinkedIn"></a> </div>
+        <!-- youtube -->
+        <div class="social-media-icon mdl-cell mdl-cell--2-col"> <a href="https://youtube.com/user/CharlesSturtUni" title="CSU YouTube"><img src="http://accommodation.csu.edu.au/__data/assets/image/0004/2431768/social-icon-youtube.png" alt="CSU YouTube"></a> </div>
+        <!-- instagram -->
+        <div class="social-media-icon mdl-cell mdl-cell--2-col"> <a href="https://instagram.com/charlessturtuni" title="CSU Instagram"><img src="http://accommodation.csu.edu.au/__data/assets/image/0011/2431784/social-icon-instagram.png" alt="CSU Instagram"></a> </div>
+        <!-- googleplus -->
+        <div class="social-media-icon mdl-cell mdl-cell--2-col"> <a href="https://www.google.com/+charlessturtuniversity" title="CSU Google Plus"><img src="http://accommodation.csu.edu.au/__data/assets/image/0010/2431765/social-icon-google.png" alt="CSU Google Plus"></a> </div>
+      </div>
+    <div class="mdl-layout-spacer"></div>
+  </div>
+    
+    <!-- footer -->
+    <footer class="csu-footer mdl-mega-footer">
+    <div class="mdl-mega-footer__middle-section csu-main-container">
+        <div class="mdl-mega-footer__drop-down-section">
+        <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+        <h3 class="mdl-mega-footer__heading">Accommodation</h3>
+        <ul class="mdl-mega-footer__link-list">
+            <li> <a href="http://accommodation.csu.edu.au/home" title="Home - Accommodation - CSU">Home</a></li>
+            <li> <a href="http://accommodation.csu.edu.au/our-rooms" title="Our Rooms - Accommodation - CSU">Rooms</a></li>
+            <li> <a href="http://accommodation.csu.edu.au/meals-catering" title="Meals and Catering - Accommodation - CSU">Meals</a></li>
+            <li> <a href="http://accommodation.csu.edu.au/fees-and-costs" title="Fees and Payments - Accommodation - CSU">Fees</a></li>
+            <li> <a href="http://accommodation.csu.edu.au/how-to-apply" title="Apply Now - Accommodation - CSU">Apply</a></li>
+            <li> <a href="http://accommodation.csu.edu.au/off-campus" title="Off Campus Accommodation - Accommodation - CSU">Off Campus</a></li>
+            <li> <a href="http://accommodation.csu.edu.au/policies-and-guidelines" title="Policies and Guidelines - Accommodation - CSU">Policies</a></li>
+            <li> <a href="http://accommodation.csu.edu.au/contacts" title="Contact Us - Accommodation - CSU">Contacts</a> </li>
+          </ul>
+      </div>
+        <div class="mdl-mega-footer__drop-down-section">
+        <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+        <h3 class="mdl-mega-footer__heading">Accommodation Enquiries</h3>
+        <ul class="mdl-mega-footer__link-list">
+            <li>
+            <h4 class="local-footer-header">Domestic number:</h4>
+            <div class="local-footer-content">1800 275 278</div>
+            <h4 class="local-footer-header">International number:</h4>
+            <div class="local-footer-content">+61 2 6933 7508</div>
+            <h4 class="local-footer-header">Email:</h4>
+            <div class="local-footer-content"><a href="mailto:ask@csu.edu.au?subject=Query from http://accommodation.csu.edu.au/">ask@csu.edu.au</a></div>
+          </li>
+          </ul>
+      </div>
+        <div class="mdl-mega-footer__drop-down-section">
+        <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+        <h3 class="mdl-mega-footer__heading">Website Maintenance</h3>
+        <ul class="mdl-mega-footer__link-list">
+            <li>
+            <h4 class="local-footer-header">Authoriser:</h4>
+            <div class="local-footer-content"> Director, Commercial Services, Division of Finance </div>
+            <h4 class="local-footer-header">Maintainer:</h4>
+            <div class="local-footer-content"> <a title="Send a feedback email to Web Strategy Office" href="mailto:webimprovement@csu.edu.au">Web Strategy Office</a> </div>
+            <h4 class="local-footer-header">Date created:</h4>
+            <div class="local-footer-content"> 20 Aug 2016 </div>
+            <h4 class="local-footer-header">Date modified:</h4>
+            <div class="local-footer-content"> 09 Sep 2016 </div>
+          </li>
+          </ul>
+      </div>
+      </div>
+  </footer>
+    <footer class="csu-footer mdl-mega-footer cricos">
+    <div class="mdl-mega-footer__bottom-section ">
+        <div class="left">
+        <ul class="mdl-mega-footer__link-list">
+            <li><a href="mailto:web@csu.edu.au?subject=Website Feedback&body=http://accommodation.csu.edu.au">Website Feedback</a></li>
+            <li><a href="http://www.csu.edu.au/about/legal" title="Disclaimer and Copyright - Charles Sturt University">Disclaimer &amp; Copyright</a></li>
+            <li><a href="http://www.csu.edu.au/accessibility" title="Accessibility Statement - Charles Sturt University">Accessibility</a></li>
+            <li><a href="http://www.csu.edu.au/about/legal#privacy" title="Privacy Statement - Charles Sturt University">Privacy</a></li>
+          </ul>
+        <p class="mdl-typography--font-light">Australia: 1800 334 733 | International: +61 2 6338 6077</p>
+        <p class="mdl-typography--font-light">© 2016 Charles Sturt University | CRICOS 00005F</p>
+      </div>
+        <div class="right">
+        <h3 class="mdl-mega-footer__heading"> <a href="http://www.csu.edu.au" title="Home - Charles Sturt University"><img src="http://accommodation.csu.edu.au/__data/assets/image/0019/2430604/image001.png" class="csu-logo-image" alt="Charles Sturt University"></a> </h3>
+      </div>
+      </div>
+  </footer>
+  </div>
+<div id="dialog" title="Basic dialog" style="background-color: rgba(255, 255, 255, 0.9);display:none">
+    <div align="center" >
+    <p>Loading</p>
+    <div class="mdl-spinner mdl-js-spinner is-active is-upgraded" data-upgraded=",MaterialSpinner">
+        <div class="mdl-spinner__layer mdl-spinner__layer-1">
+        <div class="mdl-spinner__circle-clipper mdl-spinner__left">
+            <div class="mdl-spinner__circle"></div>
+          </div>
+        <div class="mdl-spinner__gap-patch">
+            <div class="mdl-spinner__circle"></div>
+          </div>
+        <div class="mdl-spinner__circle-clipper mdl-spinner__right">
+            <div class="mdl-spinner__circle"></div>
+          </div>
+      </div>
+        <div class="mdl-spinner__layer mdl-spinner__layer-2">
+        <div class="mdl-spinner__circle-clipper mdl-spinner__left">
+            <div class="mdl-spinner__circle"></div>
+          </div>
+        <div class="mdl-spinner__gap-patch">
+            <div class="mdl-spinner__circle"></div>
+          </div>
+        <div class="mdl-spinner__circle-clipper mdl-spinner__right">
+            <div class="mdl-spinner__circle"></div>
+          </div>
+      </div>
+        <div class="mdl-spinner__layer mdl-spinner__layer-3">
+        <div class="mdl-spinner__circle-clipper mdl-spinner__left">
+            <div class="mdl-spinner__circle"></div>
+          </div>
+        <div class="mdl-spinner__gap-patch">
+            <div class="mdl-spinner__circle"></div>
+          </div>
+        <div class="mdl-spinner__circle-clipper mdl-spinner__right">
+            <div class="mdl-spinner__circle"></div>
+          </div>
+      </div>
+        <div class="mdl-spinner__layer mdl-spinner__layer-4">
+        <div class="mdl-spinner__circle-clipper mdl-spinner__left">
+            <div class="mdl-spinner__circle"></div>
+          </div>
+        <div class="mdl-spinner__gap-patch">
+            <div class="mdl-spinner__circle"></div>
+          </div>
+        <div class="mdl-spinner__circle-clipper mdl-spinner__right">
+            <div class="mdl-spinner__circle"></div>
+          </div>
+      </div>
+      </div>
+  </div>
+  </div>
+<script>
+
+if(typeof(getData["room"]) == "string")
+{
+$("a[href*='#tabs-2']").html("2016 Session 2 Only");
+$( "#dialog" ).dialog(
+                       {
+                            modal: true,
+                            height: 140,
+                            width: 55
+                        });
+$("body").css("overflow", "hidden");
+$(".ui-dialog-titlebar").hide();
+}
+</script> 
+<!-- FOOTER SCRIPTS --> 
+
+<script src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+</body>
+  <script>
+
+      $('.my-slider').unslider();
+      $( "#tabs" ).tabs();
+      var json;
+      $.ajax({
+               url: "http://accommodation.csu.edu.au/__data/assets/text_file/0009/2499264/accommodation-fee.json",
+               dataType: "text",
+               success: function(data) {
+               json = $.parseJSON(data);
+               packages=json["Packages"]
+               console.log(packages);
+              data=json["accommmodations"]["2017"][decodeURIComponent(getData["room"])];
+              console.log(data);
+              if(data != null)
+              {
+                   if(data.locations > 1)
+                   {
+                       data=json["accommmodations"]["2017"][decodeURIComponent(getData["room"])][decodeURIComponent(getData["location"])];
+                   }
+                   createDataTabs(data,"1");
+              }
+
+              data=json["accommmodations"]["2016"][decodeURIComponent(getData["room"])];
+              console.log(data);
+              if(data != null)
+              {
+                   if(data.locations > 1)
+                   {
+                       data=json["accommmodations"]["2016"][decodeURIComponent(getData["room"])][decodeURIComponent(getData["location"])];
+                   }
+                   createDataTabs(data,"2");
+              }
+        
+
+
+              }
+            });
+
+
+/*
+      var config = {
+          apiKey: "AIzaSyDMkztmZNi6CJNGafrKPZhPE6kM-BwBO2E",
+          authDomain: "accommodations-website.firebaseapp.com",
+          databaseURL: "https://accommodations-website.firebaseio.com",
+          storageBucket: "accommodations-website.appspot.com"
+        };
+      firebase.initializeApp(config);
+
+      var database = firebase.database();
+
+      firebase.auth().signInWithEmailAndPassword("mjafer@csu.edu.au", "csu2014").catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.log(errorMessage);
+        // ...
+      });
+      var packages;
+      database.ref('/Packages').on("value", function(snapshot) {
+        packages=snapshot.val();
+        //console.log(packages);
+      }, function (errorObject) {
+        console.log("The read failed: " + errorObject.code);
+      });
+      
+      database.ref('/accommmodations/2017/'+decodeURIComponent(getData["room"])).on("value", function(snapshot) {
+        data=snapshot.val();
+        console.log(data);
+        if(data == null)
+          return 0;
+        if(data.locations > 1)
+        {
+            database.ref('/accommmodations/2017/'+decodeURIComponent(getData["room"])+'/'+decodeURIComponent(getData["location"])).on("value", function(snapshot) {
+               data=snapshot.val();
+               createDataTabs(data,"1");
+               }, function (errorObject) {
+                console.log("The read failed: " + errorObject.code);
+              });
+          return 1;
+        }
+        createDataTabs(data,"1");
+        
+
+
+
+      }, function (errorObject) {
+        console.log("The read failed: " + errorObject.code);
+      });
+
+      database.ref('/accommmodations/2016/'+decodeURIComponent(getData["room"])).on("value", function(snapshot) {
+        data=snapshot.val();
+        console.log(data);
+        if(data == null)
+          return 0;
+        if(data.locations > 1)
+        {
+            database.ref('/accommmodations/2016/'+decodeURIComponent(getData["room"])+'/'+decodeURIComponent(getData["location"])).on("value", function(snapshot) {
+               data=snapshot.val();
+               createDataTabs(data,"2");
+               }, function (errorObject) {
+                console.log("The read failed: " + errorObject.code);
+              });
+          return 1;
+        }
+        createDataTabs(data,"2");
+        
+
+
+
+      }, function (errorObject) {
+        console.log("The read failed: " + errorObject.code);
+      });
+*/
+
+  </script>
+  
+  <!-- lazy load more cards -->
+  <script>
+    var displayLine=1;
+    function showNextLine(totalLines)
+    {
+      displayLine++;
+      $("#row"+displayLine).show("show");
+      buttonData(totalLines);
+    }
+
+    function showPrevLine(totalLines)
+    {
+      $("#row"+displayLine).hide("show");
+      displayLine--;
+
+      buttonData(totalLines);
+    }
+
+    function buttonData(totalLines)
+    {
+      $("#rowMoreRows").show();
+      $("#rowLessRows").show();
+      if(displayLine == totalLines)
+      {
+      $("#rowMoreRows").hide();
+      }
+      if(displayLine == 1)
+      {
+      $("#rowLessRows").hide();
+      }
+    }
+  </script>
+  <script type="text/javascript" src="http://accommodation.csu.edu.au/__data/assets/js_file/0003/2464455/leftnav.js"></script>
+  <style>
+.global-nav {
+	height: 30px;
+	text-align: right;
+	background-color: #414141;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: 300;
+	border-top: none;
+}
+.csu-site-title {
+	color: #414141;
+	font-size: 16px;
+	font-weight: 500;
+}
+.csu-site-title-image {
+	margin-right: 1em;
+	padding-right: 1em;
+	border-right: 1px solid #efefef;
+}
+.mdl-layout__header-row {
+	position: relative;
+}
+.mdl-layout__drawer-button {
+	position: absolute;
+	top: 34px;
+}
+.mdl-layout__header.is-compact {
+	max-height: 113px;
+}
+.csu-navigation-container, .csu-navigation {
+	width: auto;
+}
+.global-nav a.mdl-navigation__link {
+	padding: 0 10px;
+	display: inline-block;
+	color: white;
+	font-size: 12px;
+	font-weight: 500;
+	-webkit-font-smoothing: antialiased;
+}
+.global-nav > .global-nav-wrapper {
+	width: auto;
+	flex: 1;
+}
+.global-nav-leftnav {
+	border-top: 1px solid silver;
+}
+ @media (max-width:900px) {
+.global-nav {
+	display: none;
+}
+.mdl-layout__drawer-button {
+	top: 0;
+}
+}
+</style>
+  </html>
