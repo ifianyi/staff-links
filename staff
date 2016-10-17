@@ -188,7 +188,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <div class="global-nav mdl-layout__header-row">
     <div class="global-nav-wrapper"> <a class="mdl-navigation__link" href="http://futurestudents.csu.edu.au/" title="Home - Future Students - CSU">Future Students</a> <a class="mdl-navigation__link" href="http://www.csu.edu.au/staff-links" title="Staff - Charles Sturt University">Staff</a> <a class="mdl-navigation__link" href="http://alumni.csu.edu.au/" title="My Alumni - Charles Sturt University">Alumni</a> <a class="mdl-navigation__link" href="http://www.csu.edu.au/library/" title="Home - Library - CSU">Library</a> <a class="mdl-navigation__link" href="http://www.csu.edu.au/about/organisational-structure/faculties-and-schools" title="Faculties and Schools - Charles Sturt University">Faculties &amp; Schools</a> <a class="mdl-navigation__link" href="http://www.csu.edu.au/jobs/" title="Home - Jobs at CSU">Jobs</a> <a class="mdl-navigation__link" href="http://www.csu.edu.au/news/" title="Latest News - CSU News">News</a> <a class="mdl-navigation__link" href="http://www.csu.edu.au/about" title="About CSU - Charles Sturt University">About</a> <a class="mdl-navigation__link" href="http://www.csu.edu.au/contacts" title="Contact us - Charles Sturt University">Contacts</a> <a class="mdl-navigation__link" href="http://student.csu.edu.au/" title="Home - Student Portal - Charles Sturt University">Student Portal</a> </div>
   </div>
-    <div class="mdl-layout__header-row"> <span class="csu-title mdl-layout-title"> <a href="http://www.csu.edu.au" title="Home - Charles Sturt University"><img class="csu-logo-image csu-site-title-image" src="http://accommodation.csu.edu.au/__data/assets/image/0019/2430604/image001.png" alt="Charles Sturt University"></a> <a href="http://accommodation.csu.edu.au" class="csu-site-title" title="Accommodation - Charles Sturt University">Staff-link</a> </span> 
+    <div class="mdl-layout__header-row"> <span class="csu-title mdl-layout-title"> <a href="http://www.csu.edu.au" title="Home - Charles Sturt University"><img class="csu-logo-image csu-site-title-image" src="http://accommodation.csu.edu.au/__data/assets/image/0019/2430604/image001.png" alt="Charles Sturt University"></a> <a href="http://www.csu.edu.au" class="csu-site-title" title="Accommodation - Charles Sturt University">Staff-link</a> </span> 
     <!-- Add spacer, to align navigation to the right in desktop -->
     <div class="csu-header-spacer mdl-layout-spacer"></div>
     <div class="csu-search-box mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right mdl-textfield--full-width">
@@ -332,13 +332,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               </ul>
           </div>
             <div class="mdl-card__supporting-text">
-            <ul>
-                <h4 class="mdl-card__title-text">Finance</h4>
-                <li><a href="http://finance.csu.edu.au/services" target="_blank" title="All Staff Finance services such as Banner, FAST, ProMaster">Finance Services</a></li>
-                <li><a href="http://finance.csu.edu.au/systems" target="_blank" title="All Staff Finance services such as Banner, FAST, ProMaster">(Banner, FAST, ProMaster...)</a></li>
-              </ul>
           </div>
-            <div class="mdl-card__actions"> </div>
+            <div class="mdl-card__actions"> 
+            </div>
           </div>
         <div class="mdl-cell mdl-cell--4-col mdl-card mdl-shadow--3dp">
             <div class="mdl-card__media"> <img src="http://accommodation.csu.edu.au/__data/assets/image/0009/2433537/gallery_wagga_hampdensPG_01.jpg"> </div>
@@ -349,15 +345,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               </ul>
           </div>
             <div class="mdl-card__supporting-text">
-            <ul>
-                <h4 class="mdl-card__title-text">Staff information and News</h4>
-                
-                <!--<li><a href="http://www.csu.edu.au/special/rivstclb/">Staff Club - Wagga Wagga</a></li>-->
-                <li><a href="http://staff.csu.edu.au/perl/portal.pl?task=main_page&amp;content_task=whatsnew_max">What's New</a></li>
-                <li><a href="http://staff.csu.edu.au" target="_blank">Staff.CSU</a></li>
-                <li><a href="https://www.csu.edu.au/unistats/products/csu-at-a-glance">University Statistics Portal</a></li>
-                <li><a href="https://www.csu.edu.au/division/student-admin/staff-services/overview">Student Administration - Staff Services</a></li>
-              </ul>
+            
           </div>
             <div class="mdl-card__actions"> </div>
           </div>
@@ -372,40 +360,58 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               </ul>
           </div>
             <div class="mdl-card__supporting-text">
+            
+          </div>
+            <div class="mdl-card__actions"> </div>
+          </div>
+           <div class="mdl-cell mdl-cell--4-col mdl-card mdl-shadow--3dp">
+            <div class="mdl-card__media"> <img src="http://accommodation.csu.edu.au/__data/assets/image/0009/2433537/gallery_wagga_hampdensPG_01.jpg"> </div>
+            <div class="mdl-card__title">
+            <ul>
+                <h4 class="mdl-card__title-text">Finance</h4>
+        <li><a href="http://finance.csu.edu.au/services" target="_blank" title="All Staff Finance services such as Banner, FAST, ProMaster">Finance Services</a></li>
+      <li><a href="http://finance.csu.edu.au/systems" target="_blank" title="All Staff Finance services such as Banner, FAST, ProMaster">(Banner, FAST, ProMaster...)</a></li>
+    </ul>
+           </div>
+            <div class="mdl-card__supporting-text">
+            
+          </div>
+            <div class="mdl-card__actions"> </div>
+          </div>
+           <div class="mdl-cell mdl-cell--4-col mdl-card mdl-shadow--3dp">
+            <div class="mdl-card__media"> <img src="http://accommodation.csu.edu.au/__data/assets/image/0009/2433537/gallery_wagga_hampdensPG_01.jpg"> </div>
+            <div class="mdl-card__title">
+            <ul>
+                <h4 class="mdl-card__title-text">Staff Information and News</h4>     
+      <!--<li><a href="http://www.csu.edu.au/special/rivstclb/">Staff Club - Wagga Wagga</a></li>-->
+      <li><a href="http://staff.csu.edu.au/perl/portal.pl?task=main_page&amp;content_task=whatsnew_max">What's New</a></li>
+      <li><a href="http://staff.csu.edu.au" target="_blank">Staff.CSU</a></li>
+      <li><a href="https://www.csu.edu.au/unistats/products/csu-at-a-glance">University Statistics Portal</a></li>
+      <li><a href="https://www.csu.edu.au/division/student-admin/staff-services/overview">Student Administration - Staff Services</a></li>
+    </ul>
+          </div>
+            <div class="mdl-card__supporting-text">
+            
+          </div>
+            <div class="mdl-card__actions"> </div>
+          </div>
+           <div class="mdl-cell mdl-cell--4-col mdl-card mdl-shadow--3dp">
+            <div class="mdl-card__media"> <img src="http://accommodation.csu.edu.au/__data/assets/image/0009/2433537/gallery_wagga_hampdensPG_01.jpg"> </div>
+            <div class="mdl-card__title">
             <ul>
                 <h4 class="mdl-card__title-text">Facilities</h4>
                 <li><a href="http://www.csu.edu.au/division/facilitiesm/maintenance">Service Requests (BEIMS)</a></li>
                 <li><a href="http://www.csu.edu.au/division/facilitiesm/security">Security</a></li>
                 <li><a href="http://www.csu.edu.au/csugreen">CSU Green</a></li>
-              </ul>
+              </ul>    
+          </div>
+            <div class="mdl-card__supporting-text">
+            
           </div>
             <div class="mdl-card__actions"> </div>
           </div>
-        
-        <!-- next row grid --> <!-- default sets of rooms section -->
-        <div class="mdl-cell mdl-cell--4-col mdl-card mdl-shadow--3dp">
-            <div class="mdl-card__media"> <img src="http://accommodation.csu.edu.au/__data/assets/image/0017/2433221/gallery_albury_rothwell_01.jpg"> </div>
-            <div class="mdl-card__title">
-            <ul>
-                <h4 class="mdl-card__title-text">HR Services</h4>
-                <li><a href="http://www.csu.edu.au/division/hr/health-safety-wellbeing/ohs-home">Health, Safety and Wellbeing</a></li>
-                <li><a href="http://www.csu.edu.au/division/hr/health-safety-wellbeing/accidents-incidents">Accident/Incident Reporting</a></li>
-                <li><a href="http://www.csu.edu.au/division/hr/health-safety-wellbeing/hazards">Hazard Reporting</a></li>
-                <li><a href="http://www.csu.edu.au/division/humres/services/">Salary, Leave &amp; Work Conditions</a></li>
-                <li><a href="http://www.csu.edu.au/division/hr/learning-and-development">Professional Learning and Development</a></li>
-                <li><a href="https://webkiosk.csu.edu.au/">Web Self Service Kiosk</a></li>
-                <li><a href="http://www.csu.edu.au/division/hr/about-hr/hr-contacts">HR Contacts</a></li>
-                <li><a href="http://www.csu.edu.au/managing-at-csu/home" title="A Toolkit for Managers and Supervisors">Managing @ CSU</a></li>
-                <li><a href="http://www.csu.edu.au/division/hr/equity-diversity-and-support/equity-diversity">Equity and Diversity</a></li>
-                <li><a href="http://www.csu.edu.au/division/hr/equity-diversity-and-support/racism-it-stops-with-me">Racism It Stops With Me</a></li>
-              </ul>
-          </div>
-            <div class="mdl-card__supporting-text"> <span class="mdl-typography--font-light mdl-typography--subhead">.</span><br>
-            <span class="mdl-typography--font-light mdl-typography--subhead"></span> </div>
-            <div class="mdl-card__actions"> </div>
-          </div>
-        <div class="mdl-cell mdl-cell--4-col mdl-card mdl-shadow--3dp">
-            <div class="mdl-card__media"> <img src="http://accommodation.csu.edu.au/__data/assets/image/0020/2433305/gallery_dubbo_01.jpg"> </div>
+           <div class="mdl-cell mdl-cell--4-col mdl-card mdl-shadow--3dp">
+            <div class="mdl-card__media"> <img src="http://accommodation.csu.edu.au/__data/assets/image/0009/2433537/gallery_wagga_hampdensPG_01.jpg"> </div>
             <div class="mdl-card__title">
             <ul>
                 <h4 class="mdl-card__title-text">Learning and Teaching</h4>
@@ -415,24 +421,133 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <li><a href="http://http://www.csu.edu.au/csu-card">CSU Card</a></li>
               </ul>
           </div>
-            <div class="mdl-card__supporting-text"> 
+            <div class="mdl-card__supporting-text">
+            
+          </div>
+            <div class="mdl-card__actions"> </div>
+          </div>
+           <div class="mdl-cell mdl-cell--4-col mdl-card mdl-shadow--3dp">
+            <div class="mdl-card__media"> <img src="http://accommodation.csu.edu.au/__data/assets/image/0009/2433537/gallery_wagga_hampdensPG_01.jpg"> </div>
+            <div class="mdl-card__title">
             <ul>
-            <h4 class="mdl-card__title-text">CSU Staff Benefits</h4>
-            <li><a href="http://www.csu.edu.au/jobs/working-with-us/benefits-and-rewards">Benefits &amp; Rewards</a></li>
+                <h4 class="mdl-card__title-text">HR Services</h4>
+                 <li><a href="</a></li>
+                 <li><a href="</a></li>
+                  <li><a href="</a></li>
+              </ul>
+          </div>
+            <div class="mdl-card__supporting-text">
+            
+          </div>
+            <div class="mdl-card__actions"> </div>
+          </div>
+           <div class="mdl-cell mdl-cell--4-col mdl-card mdl-shadow--3dp">
+            <div class="mdl-card__media"> <img src="http://accommodation.csu.edu.au/__data/assets/image/0009/2433537/gallery_wagga_hampdensPG_01.jpg"> </div>
+            <div class="mdl-card__title">
+            <ul>
+                <h4 class="mdl-card__title-text">CSU Staff Benefits</h4>
+        <li><a href="http://www.csu.edu.au/jobs/working-with-us/benefits-and-rewards">Benefits &amp; Rewards</a></li>
         <li><a href="http://www.csu.edu.au/division/hr/career-devel/career-devel-home">Professional Development</a></li>
         <li><a href="http://www.csu.edu.au/jobs/working-with-us/regional-living">Regional Living</a></li>
       </ul>
+          </div>
+            <div class="mdl-card__supporting-text">
+            
+          </div>
+            <div class="mdl-card__actions"> </div>
+          </div>
+           <div class="mdl-cell mdl-cell--4-col mdl-card mdl-shadow--3dp">
+            <div class="mdl-card__media"> <img src="http://accommodation.csu.edu.au/__data/assets/image/0009/2433537/gallery_wagga_hampdensPG_01.jpg"> </div>
+            <div class="mdl-card__title">
+            <ul>
+                <h4 class="mdl-card__title-text">Organisation</h4>
+                <li><a href="http://www.csu.edu.au/about/organisational-structure/offices-and-divisions">Offices and Divisions</a></li>
+        <li><a href="http://www.csu.edu.au/about/organisational-structure/faculties-and-schools">Faculties and Schools</a></li>
+        <li><a href="http://www.csu.edu.au/about/organisational-structure/institutes">Institutes and Centres</a></li>
+        <li><a href="http://www.csu.edu.au/staff/yourcsu/">yourCSU</a></li>
+      </ul>
+          </div>
+            <div class="mdl-card__supporting-text">
+            
+          </div>
+            <div class="mdl-card__actions"> </div>
+          </div>
+           <div class="mdl-cell mdl-cell--4-col mdl-card mdl-shadow--3dp">
+            <div class="mdl-card__media"> <img src="http://accommodation.csu.edu.au/__data/assets/image/0009/2433537/gallery_wagga_hampdensPG_01.jpg"> </div>
+            <div class="mdl-card__title">
+            <ul>
+                <h4 class="mdl-card__title-text">Jobs@CSU</h4>
+               <li><a href="http://www.csu.edu.au/jobs/home/acad-vacancies">Academic staff</a></li>
+        <li><a href="http://www.csu.edu.au/jobs/home/general-vacancies">General staff</a></li>
+        <li><a href="http://www.csu.edu.au/jobs">Internal staff <i class="i-lock"></i></a></li>
+              </ul>
+          </div>
+            <div class="mdl-card__supporting-text">
+            
+          </div>
+            <div class="mdl-card__actions"> </div>
+          </div>
+           <div class="mdl-cell mdl-cell--4-col mdl-card mdl-shadow--3dp">
+            <div class="mdl-card__media"> <img src="http://accommodation.csu.edu.au/__data/assets/image/0009/2433537/gallery_wagga_hampdensPG_01.jpg"> </div>
+            <div class="mdl-card__title">
+            <ul>
+                <h4 class="mdl-card__title-text">QUICK STATS AND USEFUL INFORMATION</h4>
+                <li><a href="https://www.csu.edu.au/unistats/products/csu-at-a-glance">Summary Statistics</a><br />
+          Student headcount, course enrolments, teaching load, financial statements and more.</li>
+        <li><a href="http://www.csu.edu.au/division/vcoffice/office-of-the-vice-chancellor/strategy-structure">University Strategy</a></li>
+        <li><a href="http://www.csu.edu.au/division/vcoffice/office-of-the-vice-chancellor/welcome">Office of the Vice Chancellor</a></li>
+        <li><a href="http://www.csu.edu.au/about/locations">Campus locations</a></li>
+              </ul>
+          </div>
+            <div class="mdl-card__supporting-text">
+            
+          </div>
+            <div class="mdl-card__actions"> </div>
+          </div>
+        
+        <!-- next row grid --> <!-- default sets of rooms section -->
+        <div class="mdl-cell mdl-cell--4-col mdl-card mdl-shadow--3dp">
+            <div class="mdl-card__media"> <img src="http://accommodation.csu.edu.au/__data/assets/image/0017/2433221/gallery_albury_rothwell_01.jpg"> </div>
+            <div class="mdl-card__title">
+                <ul>
+                <h4 class="mdl-card__title-text">Subject related</h4>
+                 <li><a href="http://online.csu.edu.au/Inter/Action?type=B&amp;cmd=zsrsweb&amp;run=O">DE Residential School Timetable</a></li>
+        <li><a href="http://online.csu.edu.au/general/subjects/">Online Supported Subjects - Staff Access</a></li>
+        <li><a href="http://online.csu.edu.au/Web/Staff_access.html">Web Access to Banner Student System</a></li>
+        <li><a href="https://www.csu.edu.au/division/student-admin/staff-services">Division of Student Administration Staff Resources <i class="i-lock"></i></a></li>
+              </ul>    
+          </div>
+            <div class="mdl-card__supporting-text"> 
              </div>
-            <div class="mdl-card__actions"> 
-            </div>
+            <div class="mdl-card__actions"> </div>
           </div>
         <div class="mdl-cell mdl-cell--4-col mdl-card mdl-shadow--3dp">
-            <div class="mdl-card__media"> <img src="img src="images/benefits.jpg"> 
-            </div>
+            <div class="mdl-card__media"> <img src="http://accommodation.csu.edu.au/__data/assets/image/0020/2433305/gallery_dubbo_01.jpg"> </div>
+            <div class="mdl-card__title">
+            <ul>
+                <h4 class="mdl-card__title-text">Manuals / Handbook</h4>
+                 <li><a href="http://www.csu.edu.au/acad_sec/">Academic Information</a></li>
+        <li><a href="http://www.csu.edu.au/adminman">Administration Manual</a></li>
+        <li><a href="http://www.csu.edu.au/handbook">Handbook</a></li>
+              </ul>
+                </div>
+                </div>
+                <div class="mdl-cell mdl-cell--4-col mdl-card mdl-shadow--3dp">
+            <div class="mdl-card__media"> <img src="http://accommodation.csu.edu.au/__data/assets/image/0009/2433537/gallery_wagga_hampdensPG_01.jpg"> </div>
+            <div class="mdl-card__title">
+            <ul>
+                <h4 class="mdl-card__title-text"></h4>
+                <li><a href="</a></li>
+                 <li><a href="</a></li>
+                  <li><a href="</a></li>
+              </ul>
           </div>
-      </div>
-        <div class="mdl-cell mdl-cell--4-col mdl-card mdl-shadow--3dp">
-        <div class="mdl-card__media"> <img src="http://accommodation.csu.edu.au/__data/assets/image/0017/2433221/gallery_albury_rothwell_01.jpg"> </div>
+            <div class="mdl-card__supporting-text">
+            
+          </div>
+            <div class="mdl-card__actions"> </div>
+          </div>
+          
       </div>
       </div>
    
